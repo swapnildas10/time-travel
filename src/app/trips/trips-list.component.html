@@ -1,9 +1,11 @@
 <div>
-    <h1>Walking down the memory lane...</h1>
-    <hr/>
-    <div class="row">
-        <div *ngFor="let trip of trips" class="col-md-4 margin-top">
-            <trip-thumbnail [trip]="trip"></trip-thumbnail>
-        </div>
+  <h1>Walking down the memory lane...</h1>
+  <hr/>
+  <div class="row">
+    <div class="card-deck">
+      <div *ngFor="let trip of trips" class="col-md-6 col-sm-6 col-xl-4 col-sm-6 col-xs-12 margin-top">
+        <trip-thumbnail [trip]="trip"></trip-thumbnail>
+      </div>
     </div>
+  </div>
 </div>
