@@ -6,6 +6,8 @@ import { TripsAppComponent } from './trips-app.component';
 import { TripsListComponent } from './trips/trips-list.component';
 import { TripThumbnailComponent } from './trips/trip-thumbnail.component';
 import { NavBarComponent } from './nav/navbar.component';
+import {DataStorageService} from './services/data-storage.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,9 +18,10 @@ import { NavBarComponent } from './nav/navbar.component';
   ],
   imports: [
     NgbModule.forRoot(),
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DataStorageService],
   bootstrap: [TripsAppComponent]
 })
 export class AppModule { }

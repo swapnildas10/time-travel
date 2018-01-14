@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core'
+import { Component, Input } from '@angular/core';
+import {DataStorageService} from '../services/data-storage.service';
+import {Trips} from '../models/trips';
 
 @Component({
   selector: 'trip-thumbnail',
@@ -6,11 +8,9 @@ import { Component, Input } from '@angular/core'
   styleUrls: ['./trip-thumbnail.component.css']
 })
 export class TripThumbnailComponent {
-  
-  @Input() trip:any;
-
+  constructor(private dataService: DataStorageService) {}
+  @Input() trip: any;
   handleClickMe() {
-    console.log('clicked!');
+    (this.dataService.getItems().subscribe((trips: Trips[]) => {console.log(trips);}));
   }
-
 }
